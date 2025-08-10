@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acordeón Presupuestal (IUD · Filtro por Mes + Totales)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Acordeón Presupuestal — IUD</h1>
+    <p class="hint">Une Maestro + Ejecución por <code>Código</code>, filtra por Mes y suma Apropiación Inicial, Recaudo y Acumulado Recaudo. Incluye totales globales.</p>
+
+    <div class="controls">
+      <div class="row">
+        <label for="fYear">Año:</label>
+        <select id="fYear"><option value="">Todos</option></select>
+
+        <label for="fMonth">Mes:</label>
+        <select id="fMonth"><option value="">Todos</option></select>
+
+        <button id="btnApply">Aplicar filtro</button>
+      </div>
+      <div class="row">
+        <label for="decimales">Decimales:</label>
+        <input id="decimales" type="number" min="0" max="4" value="0" />
+        <label for="moneda">Símbolo moneda:</label>
+        <input id="moneda" type="text" value="$" maxlength="8" />
+        <button id="btnReload">Recargar datos</button>
+      </div>
+    </div>
+
+    <div id="status" class="status">Cargando maestro y ejecución…</div>
+
+    <div id="diag" class="diag"></div>
+
+    <div id="global" class="global"></div>
+
+    <div id="viz"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
