@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acordeón Presupuestal (Smart Join + Diagnóstico)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Acordeón Presupuestal — Smart</h1>
+    <p class="hint">Detecta automáticamente la fila de cabeceras y mapea sinónimos. Incluye diagnóstico.</p>
+
+    <div class="controls">
+      <label class="chk">
+        <input id="calcPct" type="checkbox" />
+        Calcular % = (Ejecución / Presupuesto Actual) * 100
+      </label>
+      <label for="decimales">Decimales:</label>
+      <input id="decimales" type="number" min="0" max="4" value="0" />
+      <label for="moneda">Símbolo moneda:</label>
+      <input id="moneda" type="text" value="$" maxlength="8" />
+      <button id="btnReload">Recargar</button>
+    </div>
+
+    <div id="status" class="status">Cargando maestro y ejecución…</div>
+
+    <div id="diag" class="diag"></div>
+    <hr/>
+    <div id="viz"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
